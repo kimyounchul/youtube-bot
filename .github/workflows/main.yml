@@ -20,7 +20,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install --upgrade openai  # ✅ 최신 openai 패키지 자동 설치
+          pip uninstall -y openai  # ✅ 기존 버전 삭제
+          pip install --upgrade openai  # ✅ 최신 버전 설치
 
       - name: Run script
         env:
