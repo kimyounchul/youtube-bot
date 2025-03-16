@@ -9,7 +9,7 @@ def generate_script(recipe_name):
     prompt = f"시바견이 {recipe_name}을 만드는 스토리를 재미있게 써줘."
 
     response = openai.ChatCompletion.create(
-        model="gpt-4-turbo",  # 최신 GPT-4 모델 (가장 빠르고 저렴함)
+        model="gpt-4-turbo",  # 최신 GPT-4 모델
         messages=[
             {"role": "system", "content": "너는 유능한 요리사 시바견이야."},
             {"role": "user", "content": prompt}
