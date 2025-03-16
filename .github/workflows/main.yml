@@ -3,7 +3,7 @@ name: Run YouTube Bot
 on:
   schedule:
     - cron: '0 18 * * *'  # 매일 오후 18시에 실행 (시간 변경 가능)
-  workflow_dispatch:  # ✅ 수동 실행도 가능
+  workflow_dispatch:  # ✅ 수동 실행 가능
 
 jobs:
   run-script:
@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip uninstall -y openai  # ✅ 기존 버전 삭제
-          pip install --upgrade openai  # ✅ 최신 버전 설치
+          pip install openai==1.10.0  # ✅ 최신 버전 설치
 
       - name: Run script
         env:
